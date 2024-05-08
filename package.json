@@ -1,0 +1,20 @@
+{
+  "name": "findtwonumbers",
+  "version": "1.0.0",
+  "description": "find two numbers in sorted array",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vitaliy-Gaitkulov/findTwoNumbers.git"
+  },
+  "author": "Vitaliy Haitkulov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vitaliy-Gaitkulov/findTwoNumbers/issues"
+  },
+  "homepage": "https://github.com/Vitaliy-Gaitkulov/findTwoNumbers#readme"
+}
