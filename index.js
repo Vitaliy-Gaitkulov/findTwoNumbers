@@ -5,7 +5,7 @@ const findTwoNumbers = (array, arrayLength) => {
     const result = [];
   
     if (array[0] !== 1) {
-      result.push(1);               // в случае если первого елемента нет
+      result.push(1);                        // в случае если первого елемента нет
       array.unshift(1);                      // в случае если нет первого и второго елемента
     }
   
