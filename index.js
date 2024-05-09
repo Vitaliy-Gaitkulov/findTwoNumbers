@@ -1,4 +1,5 @@
 const findTwoNumbers = (array, arrayLength) => {
+    console.log("исходный массив:", array);
     if (array.length + 2 !== arrayLength) {
       return "отсутсвующих числа должно быть 2!";
     }
@@ -29,12 +30,12 @@ const findTwoNumbers = (array, arrayLength) => {
     }
   };
   
-  const arrayLength = 1000;
+  const arrayLength = 10;
   const array = Array.from(Array(arrayLength), (_, i) => i + 1);
   
-  array.splice(321, 1);
-  array.splice(123, 1);
+  array.splice(3, 1); // 
+  array.splice(4, 1);
   
-  console.log(findTwoNumbers(array, arrayLength));
+  console.log("найденные числа:", findTwoNumbers(array, arrayLength));
 
   // Вычислительная мощность решения = O(n) n = длинна массива
