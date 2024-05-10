@@ -18,7 +18,7 @@
 
 const numbersGenerator = (size) => {
   const array = Array.from(Array(size), (_, i) => i + 1);
-  const rands = getRandomIndex(size, 2);
+  const rands = getRandomIndex(size);
   array.splice(rands[0], 1);
   array.splice(rands[1]-1, 1);
 
