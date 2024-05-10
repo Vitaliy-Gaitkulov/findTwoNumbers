@@ -1,8 +1,43 @@
-const findTwoNumbers = (array, arrayLength) => {
-    console.log("исходный массив:", array);
-    if (array.length + 2 !== arrayLength) {
-      return "отсутсвующих числа должно быть 2!";
+(function main() {
+  console.log("Дробное число будет округлено:)");
+  console.log("Введите размер массива:");
+  process.stdin.on("data", (data) => {
+    const size = Math.round(Number(data));
+    if (isNaN(size)) {
+      console.log("Вы ввели не число!");
+    }else if (size < 2) {
+      console.log("Введите больше 1!");
+    } else {
+      const TestArray = numbersGenerator(size);
+      console.log("исходный массив:\n", TestArray);
+      const result = findTwoNumbers(TestArray, size);
+      console.log("Hайденные числа:", result);
     }
+  });
+})();
+
+const numbersGenerator = (size) => {
+  const array = Array.from(Array(size), (_, i) => i + 1);
+  const rands = getRandomIndex(size, 2);
+  array.splice(rands[0], 1);
+  array.splice(rands[1]-1, 1);
+
+  return array;
+}
+
+const getRandomIndex = (size) => {
+  const numbers = [];
+  while (numbers.length < 2) {
+    const randomNumber = Math.floor(Math.random() * size);
+    if (!numbers.includes(randomNumber)) {
+      numbers.push(randomNumber);
+    }
+  }
+
+  return numbers;
+}
+
+const findTwoNumbers = (array, arrayLength) => {
     const result = [];
   
     if (array[0] !== 1) {
@@ -29,13 +64,5 @@ const findTwoNumbers = (array, arrayLength) => {
       }
     }
   };
-  
-  const arrayLength = 10;
-  const array = Array.from(Array(arrayLength), (_, i) => i + 1);
-  
-  array.splice(3, 1); // 
-  array.splice(4, 1);
-  
-  console.log("найденные числа:", findTwoNumbers(array, arrayLength));
 
   // Вычислительная мощность решения = O(n) n = длинна массива
