@@ -21,9 +21,9 @@ const ARRAY_MAX_SIZE = 100000000;
 
 const numbersGenerator = (size) => {
   const array = Array.from(Array(size), (_, i) => i + 1);
-  const rands = getRandomIndex(size);
-  array.splice(rands[0], 1);
-  array.splice(rands[1] - 1, 1);
+  const [firstIdx, secondIdx] = getRandomIndex(size);
+  array.splice(firstIdx, 1);
+  array.splice(secondIdx - 1, 1);
 
   return array;
 };
@@ -62,7 +62,7 @@ const findTwoNumbers = (array, arrayLength) => {
       }
       result.push(array[i] + 1);
     }
-    
+
     if (result.length == 2) return result;
   }
 };
