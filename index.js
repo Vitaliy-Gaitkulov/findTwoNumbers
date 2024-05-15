@@ -1,18 +1,30 @@
+const ARRAY_MAX_SIZE = 100000000;
+
 (function main() {
   console.log("Дробное число будет округлено:)");
   console.log("Введите размер массива:");
   process.stdin.on("data", (data) => {
     const size = Math.round(Number(data));
+
     if (isNaN(size)) {
       console.log("Вы ввели не число!");
-    }else if (size < 2) {
-      console.log("Введите больше 1!");
-    } else {
-      const TestArray = numbersGenerator(size);
-      console.log("исходный массив:\n", TestArray);
-      const result = findTwoNumbers(TestArray, size);
-      console.log("Hайденные числа:", result);
+      return;
     }
+
+    if (size < 2) {
+      console.log("Введите больше 1!");
+      return;
+    }
+    if (size > ARRAY_MAX_SIZE) {
+      console.log("Массив слишком большой! Максимальный размер массива: " + ARRAY_MAX_SIZE);
+      return; 
+    }
+    
+    const TestArray = numbersGenerator(size);
+    console.log("исходный массив:\n", TestArray);
+    const result = findTwoNumbers(TestArray, size);
+    console.log("Hайденные числа:", result);
+    
   });
 })();
 
